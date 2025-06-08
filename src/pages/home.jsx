@@ -1,21 +1,29 @@
 import { Link } from 'react-router-dom';
 
 export default function Home() {
+  const linkStyle = {
+    padding: '10px 20px',
+    margin: '10px',
+    backgroundColor: '#007bff',
+    color: 'white',
+    textDecoration: 'none',
+    borderRadius: '5px',
+    display: 'inline-block',
+  };
+
   return (
-    <div>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
       <h1>Bem-vindo à página inicial!</h1>
 
-      <button>
-        <Link to="/src/Posts.jsx" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <div>
+          <Link to="/post" style={linkStyle}>
           Ir para Posts
         </Link>
-      </button>
 
-      <button>
-        <Link to="/src/Dados.jsx" style={{ textDecoration: 'none', color: 'inherit' }}>
-          Ir para Dados (id: 123)
+        <Link to="/dados/123" style={linkStyle}>
+          Ir para Dados
         </Link>
-      </button>
+      </div>
     </div>
   );
 }
